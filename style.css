@@ -1,0 +1,84 @@
+@font-face {
+    font-family: "MTS Wide";
+    src: url('fonts/MTSWide-Regular.ttf');
+}
+@font-face {
+    font-family: "MTS Wide";
+    src: url('fonts/MTSWide-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: "MTS Text";
+    src: url('fonts/MTSText-Regular.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    background: 
+    url('img/pers.png') 100% 120% / auto 70% no-repeat
+        ,url('img/bg.png') 100% / cover no-repeat;
+    width: 100%;
+    height: 100%;
+}
+body::before {
+    content: "";
+    width: 75px;
+    height: 103px;
+    background: url('img/coin.png') 100% / contain no-repeat;
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    left: -35px;
+    touch-action: none;
+    transform: rotate(-36deg);
+}
+body::after {
+    content: "";
+    width: 11px;
+    height: 34px;
+    background: url('img/coin2.png') 100% / cover;
+    filter: blur(5.26156759262085px);
+    z-index: 7;
+    position: absolute;
+    top: 90%;
+    left: 10%;
+    touch-action: none;
+    transform: rotate(125deg);
+}
+h1 {
+    padding-top: 40px;
+    
+    color: #FF0032;
+    font-family: "MTS Wide";
+    font-size: 19.25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110.5%; /* 21.271px */
+    text-transform: uppercase;
+}
+p {
+    margin-top: 15px;
+
+    color: #393939;
+    font-family: "MTS Text";
+    font-size: 12.972px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 122.9%; /* 15.942px */
+}
+.wrapper {
+    max-width: 345.081px;
+    width: 95%;
+    margin: 0 auto;
+    height: 30%;
+    
+}
+image{
+    height: 70%;
+}
