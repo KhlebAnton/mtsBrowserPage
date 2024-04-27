@@ -24,11 +24,16 @@ html {
 }
 
 body {
-   
+   overflow: hidden;
     width: 100%;
     height: 100%;
 }
-body::before {
+.mobile {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.mobile::before {
     content: "";
     width: 75px;
     height: 103px;
@@ -40,7 +45,7 @@ body::before {
     touch-action: none;
     transform: rotate(-36deg);
 }
-body::after {
+.mobile::after {
     content: "";
     width: 11px;
     height: 34px;
@@ -83,4 +88,49 @@ p {
 }
 image{
     height: 70%;
+}
+.desktop-screen {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: url('img/background.jpg') 50% / cover;
+    padding: 2.71vw 4.11vw;
+}
+.desktop-screen::after {
+    content: '';
+    position: absolute;
+    background: url('img/25м.png') 50% / cover no-repeat;
+    width: 55.88vw;
+    height: 55.88vw;
+    bottom: -3.85vw;
+    left: 53.11vw;
+    
+}
+.desktop_logo {
+    width: 9.7vw;
+    height: 3.125vw;
+    position: fixed;
+    top:  2.71vw;
+    left: 4.11vw;
+    background: url("img/head_logo.svg") 50% / cover;
+}
+.desktop-title {
+    position: relative;
+    z-index: 1;
+    font-family: 'MTS Wide';
+    font-weight: 500;
+    color: #FF0032;
+    text-transform: uppercase;
+    font-size: 3.9vw;
+    width: 63.9vw;
+    margin-top: 30vh;
+}
+.qr-code {
+    width: 7.81vw;
+    height: 7.81vw;
+    background: url('img/qr-code.png') 50% / cover;
+    position: fixed;
+    left: 4.11vw;
+    bottom: 4.89vw;
 }
