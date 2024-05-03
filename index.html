@@ -12,46 +12,63 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div id="mobile" class="mobile">
+         <div class="wrapper">
         <h1>А ты знаешь, что ты можешь перенести своего аватара в физический мир с помощью дополненной реальности?
         </h1>
         <p>Переходи в AR-приложение и посмотри,
             как твой цифровой аватар вписывается
             в твою жизнь! Ты сможешь сделать и поделиться фото, а ещё помайнить дополнительных коинов</p>
     </div>
-<script>
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if(isAndroid()) {
-        setTimeout(function () {
-            location.href = "market://launch?id=com.mixar.arion&" + window.location.search.substring(1);
-        }, 1000);
-    }
+    </div>
+   
+    <div id="desktop-screen" class="screen desktop-screen " style="display: none;">
+        <div class="header">
+            <div class="desktop_logo"></div>
+        </div>
+        <h1 class="desktop-title">
+            Открой AR-приложение с мобильного устройства
 
-    function isIOS() {
-        if (/iPad|iPhone|iPod/.test(navigator.platform)) {
-            return true;
-        } else {
-            return navigator.maxTouchPoints &&
-                navigator.maxTouchPoints > 2 &&
-                /MacIntel/.test(navigator.platform);
+        </h1>
+        <div class="qr-code">
+
+        </div>
+    </div>
+    <script>
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if(isAndroid()) {
+            setTimeout(function () {
+                location.href = "market://launch?id=com.mixar.arion&" + window.location.search.substring(1);
+            }, 1000);
         }
-    }
-    function isAndroid(){
-        return /android/i.test(userAgent)
-    }
-    //get url parms
-    function getQueryVariable(variable) {
-        var query = window.location.search.substring(1);
-        var vars = query.split('&');
-        for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split('=');
-            if (decodeURIComponent(pair[0]) == variable) {
-                return decodeURIComponent(pair[1]);
+
+        function isIOS() {
+            if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+                return true;
+            } else {
+                return navigator.maxTouchPoints &&
+                    navigator.maxTouchPoints > 2 &&
+                    /MacIntel/.test(navigator.platform);
             }
         }
-        console.log('Query variable %s not found', variable);
-    }
-</script>
+        function isAndroid(){
+            return /android/i.test(userAgent)
+        }
+        //get url parms
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (decodeURIComponent(pair[0]) == variable) {
+                    return decodeURIComponent(pair[1]);
+                }
+            }
+            console.log('Query variable %s not found', variable);
+        }
+    </script>
+    <script src="index.js"></script>
+
 </body>
 
 </html>
