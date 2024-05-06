@@ -100,7 +100,7 @@ image{
 .desktop-screen::after {
     content: '';
     position: absolute;
-    background: url('img/25м.png') 50% / cover no-repeat;
+    background: url('img/25m.png') 50% / cover no-repeat;
     width: 55.88vw;
     height: 55.88vw;
     bottom: -3.85vw;

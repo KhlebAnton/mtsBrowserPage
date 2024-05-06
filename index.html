@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-itunes-app" content="app-id=W7EC23ZU6C, app-clip-bundle-id=com.mixar.arion.clip">
+
     <link rel="stylesheet" href="style.css">
     <title>MTSBrowserPage</title>
 </head>
@@ -31,7 +34,41 @@
 
         </div>
     </div>
+    <script>
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if(isAndroid()) {
+            setTimeout(function () {
+                location.href = "market://launch?id=com.mixar.arion&" + window.location.search.substring(1);
+            }, 1000);
+        }
+
+        function isIOS() {
+            if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+                return true;
+            } else {
+                return navigator.maxTouchPoints &&
+                    navigator.maxTouchPoints > 2 &&
+                    /MacIntel/.test(navigator.platform);
+            }
+        }
+        function isAndroid(){
+            return /android/i.test(userAgent)
+        }
+        //get url parms
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                if (decodeURIComponent(pair[0]) == variable) {
+                    return decodeURIComponent(pair[1]);
+                }
+            }
+            console.log('Query variable %s not found', variable);
+        }
+    </script>
     <script src="index.js"></script>
+
 </body>
 
 </html>
